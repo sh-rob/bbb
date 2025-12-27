@@ -1,0 +1,415 @@
+/* ============================================
+   DARK VADER ANIMATION ENHANCEMENTS
+   Optional CSS file for Dark Vader themed effects
+
+   To use: Import in app/layout.tsx
+   import './dark-vader-enhancements.css'
+   ============================================ */
+
+/* ============================================
+   1. LIGHTSABER BUTTON GLOWS
+   ============================================ */
+
+.btn-hero:hover,
+.btn-book:hover,
+.btn-submit:hover:not(:disabled),
+.btn-booking-alt:hover {
+    box-shadow:
+        0 0 30px rgba(220, 0, 0, 0.8),
+        0 0 60px rgba(220, 0, 0, 0.6),
+        0 0 90px rgba(220, 0, 0, 0.4);
+    animation: lightsaberPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes lightsaberPulse {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(220, 0, 0, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(220, 0, 0, 1);
+    }
+}
+
+/* ============================================
+   2. GLOWING TEXT SHADOWS
+   ============================================ */
+
+.logo-text {
+    text-shadow:
+        0 0 10px rgba(220, 0, 0, 0.8),
+        0 0 20px rgba(220, 0, 0, 0.6),
+        0 0 30px rgba(220, 0, 0, 0.4);
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+.section-title {
+    text-shadow:
+        0 0 5px rgba(220, 0, 0, 0.6),
+        0 0 10px rgba(220, 0, 0, 0.4);
+}
+
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow:
+            0 0 10px rgba(220, 0, 0, 0.8),
+            0 0 20px rgba(220, 0, 0, 0.6);
+    }
+    50% {
+        text-shadow:
+            0 0 15px rgba(220, 0, 0, 1),
+            0 0 30px rgba(220, 0, 0, 0.8),
+            0 0 45px rgba(220, 0, 0, 0.6);
+    }
+}
+
+/* ============================================
+   3. RED ENERGY BORDERS
+   ============================================ */
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        45deg,
+        var(--color-red),
+        transparent,
+        var(--color-red),
+        transparent,
+        var(--color-red)
+    );
+    background-size: 400% 400%;
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    animation: energyFlow 3s ease infinite;
+}
+
+.service-card:hover::after {
+    opacity: 1;
+}
+
+@keyframes energyFlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* ============================================
+   4. FORCE PULL SCROLL ANIMATIONS
+   ============================================ */
+
+.service-card,
+.gallery-item {
+    animation: forcePullIn 0.8s ease-out forwards;
+}
+
+@keyframes forcePullIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(50px);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* ============================================
+   5. HOLOGRAM SCAN LINES
+   ============================================ */
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(220, 0, 0, 0.03) 2px,
+        rgba(220, 0, 0, 0.03) 4px
+    );
+    pointer-events: none;
+    animation: scanLines 8s linear infinite;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+@keyframes scanLines {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(50px);
+    }
+}
+
+/* ============================================
+   6. POWER CHARGING EFFECT
+   ============================================ */
+
+.btn-submit:disabled {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit:disabled::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: var(--color-red);
+    box-shadow: 0 0 10px rgba(220, 0, 0, 0.8);
+    animation: powerCharge 2s ease-in-out infinite;
+}
+
+@keyframes powerCharge {
+    0% {
+        width: 0%;
+        box-shadow: 0 0 5px rgba(220, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(220, 0, 0, 1);
+    }
+    100% {
+        width: 100%;
+        box-shadow: 0 0 30px rgba(220, 0, 0, 1);
+    }
+}
+
+/* ============================================
+   7. INPUT FOCUS GLOW
+   ============================================ */
+
+.form-group input:focus,
+.form-group textarea:focus,
+.newsletter-form input:focus {
+    border-color: var(--color-red);
+    box-shadow:
+        0 0 10px rgba(220, 0, 0, 0.4),
+        0 0 20px rgba(220, 0, 0, 0.2);
+    animation: inputGlow 2s ease-in-out infinite;
+}
+
+@keyframes inputGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(220, 0, 0, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(220, 0, 0, 0.6);
+    }
+}
+
+/* ============================================
+   8. NAVIGATION LINK ENERGY
+   ============================================ */
+
+.nav-menu li a::after {
+    box-shadow: 0 0 10px rgba(220, 0, 0, 0.8);
+}
+
+.nav-menu li a:hover {
+    text-shadow: 0 0 10px rgba(220, 0, 0, 0.6);
+}
+
+/* ============================================
+   9. GALLERY HOVER GLOW
+   ============================================ */
+
+.gallery-item:hover {
+    box-shadow:
+        0 0 20px rgba(220, 0, 0, 0.6),
+        0 0 40px rgba(220, 0, 0, 0.4);
+}
+
+/* ============================================
+   10. FOOTER SOCIAL ICON GLOW
+   ============================================ */
+
+.social-icon:hover {
+    box-shadow:
+        0 0 15px rgba(220, 0, 0, 0.8),
+        0 0 30px rgba(220, 0, 0, 0.6);
+}
+
+/* ============================================
+   11. SCROLL INDICATOR PULSE
+   ============================================ */
+
+.scroll-indicator {
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+        opacity: 0.7;
+    }
+}
+
+.scroll-line {
+    box-shadow: 0 0 10px rgba(220, 0, 0, 0.6);
+}
+
+/* ============================================
+   12. SECTION TRANSITION SWOOSH
+   ============================================ */
+
+.about,
+.services,
+.booking,
+.contact {
+    position: relative;
+}
+
+.about::before,
+.services::before,
+.booking::before,
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(220, 0, 0, 0.3),
+        transparent
+    );
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Trigger animation when section comes into view */
+.about.in-view::before,
+.services.in-view::before,
+.booking.in-view::before,
+.contact.in-view::before {
+    animation: darkReveal 1.5s ease-out;
+}
+
+@keyframes darkReveal {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* ============================================
+   13. LOGO PULSING SUBTITLE
+   ============================================ */
+
+.logo-subtitle {
+    animation: subtitlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtitlePulse {
+    0%, 100% {
+        opacity: 0.8;
+        letter-spacing: 4px;
+    }
+    50% {
+        opacity: 1;
+        letter-spacing: 5px;
+    }
+}
+
+/* ============================================
+   14. RED ENERGY PARTICLES
+   ============================================ */
+
+.red-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--color-red);
+    border-radius: 50%;
+    box-shadow:
+        0 0 10px rgba(220, 0, 0, 0.8),
+        0 0 20px rgba(220, 0, 0, 0.6);
+    animation: floatParticle 10s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatParticle {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    50% {
+        transform: translate(
+            calc(-50px + 100px * var(--random-x, 0.5)),
+            calc(-50px + 100px * var(--random-y, 0.5))
+        );
+    }
+}
+
+/* ============================================
+   15. MOBILE OPTIMIZATIONS
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Reduce particle effects on mobile */
+    .red-particle {
+        display: none;
+    }
+
+    /* Simplify animations for performance */
+    .service-card::after,
+    .hero::after {
+        animation: none;
+    }
+
+    /* Keep essential glows */
+    .btn-hero:hover,
+    .btn-submit:hover {
+        animation: none;
+        box-shadow: 0 0 20px rgba(220, 0, 0, 0.6);
+    }
+}
+
+/* ============================================
+   15. REDUCED MOTION SUPPORT
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -39,12 +39,12 @@ export default function SpaceAnimation() {
         this.speedY = Math.random() * 0.5 - 0.25
         this.opacity = Math.random() * 0.5 + 0.3
 
-        // Use design token colors: white, orange tint, or blue tint
+        // Use design token colors: white, red tint, or blue tint
         const colorChoice = Math.random()
         if (colorChoice < 0.7) {
           this.color = 'rgba(255, 255, 255, ' + this.opacity + ')'
         } else if (colorChoice < 0.85) {
-          this.color = 'rgba(255, 107, 53, ' + this.opacity + ')' // Primary orange
+          this.color = 'rgba(220, 38, 38, ' + this.opacity + ')' // Primary red
         } else {
           this.color = 'rgba(14, 165, 233, ' + this.opacity + ')' // Secondary blue
         }

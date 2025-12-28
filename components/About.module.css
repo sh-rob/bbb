@@ -59,7 +59,7 @@
     background: linear-gradient(
         45deg,
         transparent 30%,
-        var(--color-primary-glow) 50%,
+        rgba(220, 38, 38, 0.08) 50%,
         transparent 70%
     );
 }

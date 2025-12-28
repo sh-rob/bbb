@@ -21,11 +21,11 @@
     --color-text-muted: #A0A0A0;        /* Muted text */
     --color-text-disabled: #666666;     /* Disabled state */
 
-    /* Primary Accent - Energetic Orange (Athletic, Premium) */
-    --color-primary: #FF6B35;           /* Vibrant coral-orange */
-    --color-primary-dark: #E85A28;      /* Darker for hover */
-    --color-primary-light: #FF8355;     /* Lighter for subtle effects */
-    --color-primary-glow: rgba(255, 107, 53, 0.15); /* Subtle glow */
+    /* Primary Accent - Lightsaber Red (Power, Energy, Athletic) */
+    --color-primary: #DC2626;           /* Deep vibrant red */
+    --color-primary-dark: #B91C1C;      /* Darker red for hover */
+    --color-primary-light: #EF4444;     /* Brighter red for accents */
+    --color-primary-glow: rgba(220, 38, 38, 0.2); /* Red glow for focus rings */
 
     /* Secondary Accent - Deep Blue (Trust, Performance) */
     --color-secondary: #0EA5E9;         /* Sky blue */
@@ -102,8 +102,8 @@
     --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.7);
 
     /* Primary glow shadow for CTAs */
-    --shadow-primary: 0 4px 16px rgba(255, 107, 53, 0.3);
-    --shadow-primary-hover: 0 8px 24px rgba(255, 107, 53, 0.4);
+    --shadow-primary: 0 4px 16px rgba(220, 38, 38, 0.3);
+    --shadow-primary-hover: 0 8px 24px rgba(220, 38, 38, 0.4);
 
     /* ============================================
        TRANSITIONS

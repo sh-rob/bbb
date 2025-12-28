@@ -3,7 +3,7 @@
    ============================================ */
 
 .about {
-    padding: 8rem 0;
+    padding: var(--spacing-4xl) 0;
     background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
     position: relative;
 }
@@ -21,7 +21,7 @@
 .aboutWrapper {
     display: grid;
     grid-template-columns: 350px 1fr;
-    gap: 4rem;
+    gap: var(--spacing-2xl);
     align-items: start;
     max-width: 1200px;
     margin: 0 auto;
@@ -40,7 +40,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: var(--spacing-sm);
     position: relative;
     overflow: hidden;
 }
@@ -88,7 +88,7 @@
     font-size: 1.2rem;
     line-height: 1.8;
     color: var(--color-off-white);
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-lg);
     font-weight: 300;
 }
 
@@ -96,7 +96,7 @@
 @media (max-width: 768px) {
     .aboutWrapper {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: var(--spacing-xl);
     }
 
     .trainerPhoto {

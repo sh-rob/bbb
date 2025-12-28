@@ -4,7 +4,7 @@
 
 .footer {
     background: linear-gradient(180deg, #0a0a0a 0%, #1a0a00 100%);
-    padding: 4rem 0 2rem;
+    padding: var(--spacing-2xl) 0 var(--spacing-lg);
     border-top: 3px solid transparent;
     border-image: linear-gradient(90deg, var(--color-red), var(--color-orange), var(--color-red)) 1;
 }
@@ -12,20 +12,20 @@
 .footerGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-    margin-bottom: 3rem;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
 }
 
 .footerCol h4 {
     font-family: var(--font-primary);
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-md);
     letter-spacing: 2px;
     color: var(--color-orange);
 }
 
 .footerCol ul li {
-    margin-bottom: 0.8rem;
+    margin-bottom: var(--spacing-sm);
     color: var(--color-off-white);
     font-weight: 300;
 }
@@ -37,8 +37,8 @@
 
 .socialLinks {
     display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
 }
 
 .socialIcon {
@@ -70,12 +70,12 @@
 .newsletterForm {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
-    margin-top: 1rem;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
 }
 
 .newsletterForm input {
-    padding: 0.8rem;
+    padding: var(--spacing-sm);
     background-color: var(--color-medium-gray);
     border: 1px solid var(--color-light-gray);
     color: var(--color-white);
@@ -88,7 +88,7 @@
 }
 
 .newsletterForm button {
-    padding: 0.8rem;
+    padding: var(--spacing-sm);
     background: linear-gradient(135deg, var(--color-blue-dark) 0%, var(--color-blue-lightsaber) 100%);
     color: var(--color-white);
     font-family: var(--font-primary);
@@ -107,7 +107,7 @@
 }
 
 .footerBottom {
-    padding-top: 2rem;
+    padding-top: var(--spacing-lg);
     border-top: 1px solid var(--color-medium-gray);
     display: flex;
     justify-content: space-between;
@@ -118,7 +118,7 @@
 
 .footerLinks {
     display: flex;
-    gap: 2rem;
+    gap: var(--spacing-lg);
 }
 
 .footerLinks a:hover {

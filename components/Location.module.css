@@ -3,26 +3,26 @@
    ============================================ */
 
 .location {
-    padding: 8rem 0;
+    padding: var(--spacing-4xl) 0;
     background-color: var(--color-dark-gray);
 }
 
 .locationGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: var(--spacing-2xl);
     align-items: start;
 }
 
 .infoBlock {
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--spacing-lg);
 }
 
 .infoBlock h3 {
     font-family: var(--font-primary);
     font-size: 1.2rem;
     color: var(--color-red);
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-sm);
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -47,13 +47,13 @@
 .hours {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: var(--spacing-sm);
 }
 
 .hourRow {
     display: flex;
     justify-content: space-between;
-    padding: 0.8rem;
+    padding: var(--spacing-sm);
     background-color: var(--color-medium-gray);
     border-left: 3px solid var(--color-red);
 }

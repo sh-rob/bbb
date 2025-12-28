@@ -249,9 +249,9 @@
     }
 
     .mobileCtaButton {
-        padding: var(--spacing-sm) var(--spacing-sm);
-        font-size: 0.9rem;
-        letter-spacing: 1.5px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: var(--font-size-xs);
+        letter-spacing: 0.08em;
     }
 }
 

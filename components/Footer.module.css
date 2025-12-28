@@ -1,0 +1,142 @@
+/* ============================================
+   FOOTER COMPONENT STYLES
+   ============================================ */
+
+.footer {
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a0a00 100%);
+    padding: 4rem 0 2rem;
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(90deg, var(--color-red), var(--color-orange), var(--color-red)) 1;
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footerCol h4 {
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--color-orange);
+}
+
+.footerCol ul li {
+    margin-bottom: 0.8rem;
+    color: var(--color-off-white);
+    font-weight: 300;
+}
+
+.footerCol ul li a:hover {
+    color: var(--color-red);
+    padding-left: 5px;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.socialIcon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-medium-gray);
+    border: 1px solid var(--color-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    transition: var(--transition);
+    border-radius: 4px;
+}
+
+.socialIcon svg {
+    transition: var(--transition);
+}
+
+.socialIcon:hover {
+    background-color: var(--color-red);
+    transform: translateY(-3px);
+}
+
+.socialIcon:hover svg {
+    transform: scale(1.1);
+}
+
+.newsletterForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.newsletterForm input {
+    padding: 0.8rem;
+    background-color: var(--color-medium-gray);
+    border: 1px solid var(--color-light-gray);
+    color: var(--color-white);
+    font-family: var(--font-secondary);
+}
+
+.newsletterForm input:focus {
+    outline: none;
+    border-color: var(--color-blue-lightsaber);
+}
+
+.newsletterForm button {
+    padding: 0.8rem;
+    background: linear-gradient(135deg, var(--color-blue-dark) 0%, var(--color-blue-lightsaber) 100%);
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    border: 2px solid var(--color-blue-lightsaber);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.newsletterForm button:hover {
+    background-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+}
+
+.footerBottom {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-medium-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-off-white);
+    font-size: 0.9rem;
+}
+
+.footerLinks {
+    display: flex;
+    gap: 2rem;
+}
+
+.footerLinks a:hover {
+    color: var(--color-red);
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+    .footerGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .footerGrid {
+        grid-template-columns: 1fr;
+    }
+}

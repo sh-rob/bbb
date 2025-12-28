@@ -1,0 +1,257 @@
+/* ============================================
+   NAVIGATION COMPONENT STYLES
+   ============================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-red);
+}
+
+.scrolled {
+    box-shadow: 0 2px 20px rgba(220, 0, 0, 0.3);
+}
+
+.navContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logoText {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--color-white);
+    text-shadow: 0 0 10px rgba(220, 0, 0, 0.5);
+}
+
+.logoSubtitle {
+    font-family: var(--font-primary);
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: var(--color-red);
+    font-weight: 400;
+}
+
+.navMenu {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.navMenu li a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    position: relative;
+}
+
+.navMenu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-red);
+    transition: var(--transition);
+}
+
+.navMenu li a:hover::after {
+    width: 100%;
+}
+
+.btnBook {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-blue-dark) 0%, var(--color-blue-lightsaber) 100%);
+    color: var(--color-white);
+    padding: 0.8rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    border: 2px solid var(--color-blue-lightsaber);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btnBook:hover {
+    background-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+}
+
+.mobileCtaButton {
+    display: none;  /* Hidden on desktop */
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-red);
+    transition: var(--transition);
+}
+
+.active.hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.active.hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.active.hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ============================================
+   TABLET & MOBILE RESPONSIVENESS
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .navMenu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.98);
+        width: 100%;
+        padding: 2rem 0;
+        transition: left 0.3s ease;
+        border-bottom: 1px solid var(--color-red);
+    }
+
+    .navMenu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide desktop button when hamburger appears */
+    .btnBook {
+        display: none !important;
+    }
+
+    /* Show sticky mobile CTA button under header */
+    .mobileCtaButton {
+        display: block;
+        position: fixed;
+        top: 70px;  /* Position under navbar (navbar height) */
+        left: 1rem;  /* Add left spacing */
+        right: 1rem;  /* Add right spacing */
+        z-index: 999;
+
+        background: linear-gradient(135deg, var(--color-blue-dark) 0%, var(--color-blue-lightsaber) 100%);
+        color: var(--color-white);
+        padding: 1.2rem 1.5rem;
+
+        font-family: var(--font-primary);
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        border: 2px solid var(--color-blue-lightsaber);
+        border-radius: 4px;  /* Add rounded corners */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .mobileCtaButton:active {
+        background-color: var(--color-blue-lightsaber);
+        transform: scale(0.98);
+    }
+}
+
+@media (max-width: 768px) {
+    .navContainer {
+        padding: 0 1rem;
+    }
+
+    .logoText {
+        font-size: 1.2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .logoSubtitle {
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navContainer {
+        padding: 0 0.75rem;
+    }
+
+    .logoText {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .logoSubtitle {
+        font-size: 0.5rem;
+        letter-spacing: 2px;
+    }
+
+    .hamburger span {
+        width: 22px;
+        height: 2.5px;
+    }
+
+    .mobileCtaButton {
+        padding: 1rem 1rem;
+        font-size: 0.9rem;
+        letter-spacing: 1.5px;
+    }
+}
+
+@media (max-width: 375px) {
+    .navContainer {
+        padding: 0 0.5rem;
+    }
+
+    .logoText {
+        font-size: 0.9rem;
+    }
+
+    .logoSubtitle {
+        font-size: 0.45rem;
+        letter-spacing: 1.5px;
+    }
+
+    .mobileCtaButton {
+        padding: 0.9rem 0.75rem;
+        font-size: 0.85rem;
+    }
+}

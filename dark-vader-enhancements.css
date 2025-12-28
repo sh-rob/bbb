@@ -10,23 +10,41 @@
    1. LIGHTSABER BUTTON GLOWS
    ============================================ */
 
+/* Red lightsaber glow (Dark side - Hero button) */
 .btn-hero:hover,
-.btn-book:hover,
-.btn-submit:hover:not(:disabled),
 .btn-booking-alt:hover {
     box-shadow:
         0 0 30px rgba(220, 0, 0, 0.8),
         0 0 60px rgba(220, 0, 0, 0.6),
         0 0 90px rgba(220, 0, 0, 0.4);
-    animation: lightsaberPulse 1.5s ease-in-out infinite;
+    animation: redLightsaberPulse 1.5s ease-in-out infinite;
 }
 
-@keyframes lightsaberPulse {
+@keyframes redLightsaberPulse {
     0%, 100% {
         box-shadow: 0 0 30px rgba(220, 0, 0, 0.8);
     }
     50% {
         box-shadow: 0 0 50px rgba(220, 0, 0, 1);
+    }
+}
+
+/* Blue lightsaber glow (Light side - Navbar & Forms) */
+.btn-book:hover,
+.btn-submit:hover:not(:disabled) {
+    box-shadow:
+        0 0 30px rgba(0, 212, 255, 0.8),
+        0 0 60px rgba(0, 212, 255, 0.6),
+        0 0 90px rgba(0, 212, 255, 0.4);
+    animation: blueLightsaberPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes blueLightsaberPulse {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(0, 212, 255, 1);
     }
 }
 
@@ -39,14 +57,14 @@
         0 0 10px rgba(220, 0, 0, 0.8),
         0 0 20px rgba(220, 0, 0, 0.6),
         0 0 30px rgba(220, 0, 0, 0.4);
-    animation: textGlow 3s ease-in-out infinite;
+    /* animation: textGlow 3s ease-in-out infinite; */
 }
 
-.section-title {
+/* .section-title {
     text-shadow:
         0 0 5px rgba(220, 0, 0, 0.6),
         0 0 10px rgba(220, 0, 0, 0.4);
-}
+} */
 
 @keyframes textGlow {
     0%, 100% {
@@ -63,10 +81,10 @@
 }
 
 /* ============================================
-   3. RED ENERGY BORDERS
+   3. RED ENERGY BORDERS - DISABLED
    ============================================ */
 
-.service-card {
+/* .service-card {
     position: relative;
     overflow: hidden;
 }
@@ -105,13 +123,18 @@
     50% {
         background-position: 100% 50%;
     }
-}
+} */
 
 /* ============================================
-   4. FORCE PULL SCROLL ANIMATIONS
+   4. FORCE PULL SCROLL ANIMATIONS - DISABLED for service-card
    ============================================ */
 
-.service-card,
+/* Disabled for service cards, kept for gallery items */
+/* .service-card,
+.gallery-item {
+    animation: forcePullIn 0.8s ease-out forwards;
+} */
+
 .gallery-item {
     animation: forcePullIn 0.8s ease-out forwards;
 }
@@ -327,7 +350,7 @@
    ============================================ */
 
 .logo-subtitle {
-    animation: subtitlePulse 3s ease-in-out infinite;
+    /* animation: subtitlePulse 3s ease-in-out infinite; */
 }
 
 @keyframes subtitlePulse {
@@ -399,6 +422,139 @@
     .btn-submit:hover {
         animation: none;
         box-shadow: 0 0 20px rgba(220, 0, 0, 0.6);
+    }
+}
+
+/* ============================================
+   16. STAR WARS SHIPS ANIMATIONS
+   ============================================ */
+
+.star-wars-ship {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+    animation: shipFloat 10s infinite ease-in-out;
+}
+
+/* Red ship glow */
+.star-wars-ship.red-ship {
+    filter: drop-shadow(0 0 8px rgba(220, 0, 0, 0.6));
+}
+
+/* Blue ship glow */
+.star-wars-ship.blue-ship {
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6));
+}
+
+/* Regular floating animation for ships */
+@keyframes shipFloat {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    50% {
+        transform: translate(
+            calc(-100px + 200px * var(--random-x, 0.5)),
+            calc(-100px + 200px * var(--random-y, 0.5))
+        ) rotate(15deg);
+    }
+}
+
+/* Crashing ship animation */
+.crashing-ship {
+    animation: shipCrash 12s infinite ease-in-out !important;
+}
+
+@keyframes shipCrash {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    /* Normal flight */
+    30% {
+        transform: translate(
+            calc(-80px + 160px * var(--random-x, 0.5)),
+            calc(-80px + 160px * var(--random-y, 0.5))
+        ) rotate(10deg);
+        opacity: 1;
+    }
+    /* Start to wobble before crash */
+    35% {
+        transform: translate(
+            calc(-90px + 180px * var(--random-x, 0.5)),
+            calc(-70px + 140px * var(--random-y, 0.5))
+        ) rotate(-5deg);
+    }
+    40% {
+        transform: translate(
+            calc(-85px + 170px * var(--random-x, 0.5)),
+            calc(-60px + 120px * var(--random-y, 0.5))
+        ) rotate(20deg);
+    }
+    /* Crash point - explosion appears */
+    45% {
+        transform: translate(
+            calc(-90px + 180px * var(--random-x, 0.5)),
+            calc(-50px + 100px * var(--random-y, 0.5))
+        ) rotate(45deg) scale(0.5);
+        opacity: 0;
+    }
+    /* Stay invisible while explosion shows */
+    60% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+/* Explosion animation */
+.crashing-ship .explosion {
+    opacity: 0;
+    animation: explode 12s infinite ease-out;
+    transform-origin: center;
+}
+
+@keyframes explode {
+    0%, 44% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    /* Explosion burst */
+    45% {
+        opacity: 1;
+        transform: scale(0.5);
+    }
+    48% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    52% {
+        opacity: 0.8;
+        transform: scale(2);
+    }
+    /* Fade out */
+    60% {
+        opacity: 0;
+        transform: scale(3);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Hide ships on mobile for performance */
+@media (max-width: 768px) {
+    .star-wars-ship {
+        display: none;
     }
 }
 

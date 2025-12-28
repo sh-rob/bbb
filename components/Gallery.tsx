@@ -1,5 +1,7 @@
 'use client'
 
+import styles from './Gallery.module.css'
+
 export default function Gallery() {
   const galleryItems = [
     'TRAINING AREA 1',
@@ -15,16 +17,16 @@ export default function Gallery() {
   }
 
   return (
-    <section className="gallery" id="gallery">
+    <section className={styles.gallery} id="gallery">
       <div className="container">
         <div className="section-header">
           <span className="section-label">THE FORTRESS</span>
-          <h2 className="section-title">Our Training Ground</h2>
+          <h2 className="section-title">Our Douglasville Training Facility</h2>
         </div>
-        <div className="gallery-grid">
+        <div className={styles.galleryGrid}>
           {galleryItems.map((item, index) => (
-            <div key={index} className="gallery-item" onClick={() => handleImageClick(item)}>
-              <div className="gallery-placeholder">{item}</div>
+            <div key={index} className={styles.galleryItem} onClick={() => handleImageClick(item)}>
+              <div className={styles.galleryPlaceholder}>{item}</div>
             </div>
           ))}
         </div>

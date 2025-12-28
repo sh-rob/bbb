@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 import RedParticles from './RedParticles'
+import StarWarsShips from './StarWarsShips'
+import styles from './Hero.module.css'
 
 export default function Hero() {
   const heroContentRef = useRef<HTMLDivElement>(null)
@@ -20,20 +22,22 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="hero">
+    <section className={`${styles.hero} hero`}>
       <RedParticles />
-      <div className="hero-overlay"></div>
-      <div className="hero-content" ref={heroContentRef}>
-        <h1 className="hero-title">
-          <span className="title-line">EMBRACE</span>
-          <span className="title-line">THE POWER</span>
-        </h1>
-        <p className="hero-subtitle">Transform your body. Master your mind. Join the dark side of fitness.</p>
-        <a href="#booking" className="btn-hero">BEGIN YOUR JOURNEY</a>
+      <StarWarsShips />
+      <div className={styles.heroOverlay}></div>
+      <div className={styles.heroContent} ref={heroContentRef}>
+        <h1 className={styles.heroH1}>Personal Training in Douglasville, GA</h1>
+        <h2 className={styles.heroH2}>Embrace the Power</h2>
+        <p className={styles.heroSubtitle}>
+          Transform your body with elite personal training, strength programs,
+          and bootcamps in Douglasville, Georgia.
+        </p>
+        <a href="#booking" className={styles.btnHero}>BEGIN YOUR JOURNEY</a>
       </div>
-      <div className="scroll-indicator">
+      <div className={styles.scrollIndicator}>
         <span>SCROLL</span>
-        <div className="scroll-line"></div>
+        <div className={styles.scrollLine}></div>
       </div>
     </section>
   )

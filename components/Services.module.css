@@ -1,0 +1,58 @@
+/* ============================================
+   SERVICES COMPONENT STYLES
+   ============================================ */
+
+.services {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, #1a0000 0%, #0a0a0a 50%, #001a1a 100%);
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.serviceCard {
+    background: linear-gradient(135deg, #1a1a1a 0%, #1a0f0f 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 2px solid transparent;
+    border-image: linear-gradient(135deg, rgba(255, 149, 0, 0.3), rgba(220, 0, 0, 0.3), rgba(255, 149, 0, 0.3)) 1;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(255, 149, 0, 0.15);
+}
+
+.serviceIcon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-orange);
+    filter: drop-shadow(0 0 8px rgba(255, 149, 0, 0.7));
+    transition: var(--transition);
+}
+
+.serviceCard h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    color: var(--color-coral);
+}
+
+.serviceCard p {
+    color: var(--color-off-white);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 480px) {
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,89 @@
+/* ============================================
+   LOCATION COMPONENT STYLES
+   ============================================ */
+
+.location {
+    padding: 8rem 0;
+    background-color: var(--color-dark-gray);
+}
+
+.locationGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.infoBlock {
+    margin-bottom: 2.5rem;
+}
+
+.infoBlock h3 {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    color: var(--color-red);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.infoBlock p {
+    color: var(--color-off-white);
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.infoBlock a {
+    color: var(--color-red);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.infoBlock a:hover {
+    color: var(--color-red-bright);
+}
+
+.hours {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.hourRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    background-color: var(--color-medium-gray);
+    border-left: 3px solid var(--color-red);
+}
+
+.hourRow span:first-child {
+    font-weight: 600;
+}
+
+.locationMap {
+    height: 100%;
+    min-height: 500px;
+    position: relative;
+    border: 2px solid var(--color-red);
+    overflow: hidden;
+}
+
+.locationMap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+    .locationGrid {
+        grid-template-columns: 1fr;
+    }
+}

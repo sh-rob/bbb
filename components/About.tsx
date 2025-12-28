@@ -1,22 +1,28 @@
+import styles from './About.module.css'
+
 export default function About() {
   return (
-    <section className="about" id="about">
+    <section className={styles.about} id="about">
       <div className="container">
         <div className="section-header">
           <span className="section-label">UNLEASH YOUR POTENTIAL</span>
           <h2 className="section-title">Elite Training for Elite Warriors</h2>
         </div>
-        <div className="about-content">
-          <p className="about-text">
-            Body&apos;s By Bert Performance & Fitness is not just a gym—it&apos;s a transformation chamber where ordinary individuals
-            evolve into extraordinary athletes. Our training philosophy combines cutting-edge science with
-            warrior discipline to forge bodies and minds of steel.
-          </p>
-          <p className="about-text">
-            Led by master trainers who have conquered their own limits, we guide you through personalized
-            programs designed to unlock your hidden potential. Every rep, every set, every drop of sweat
-            brings you closer to the powerful version of yourself that&apos;s waiting to emerge.
-          </p>
+        <div className={styles.aboutWrapper}>
+          <div className={styles.trainerPhoto}>
+            <div className={styles.photoPlaceholder}>
+              <span>ALBERT BRYANT</span>
+              <p>Head Trainer</p>
+            </div>
+          </div>
+          <div className={styles.aboutContent}>
+            <p className={styles.aboutText}>
+              Body&apos;s By Bert is a top-tier fitness business located in Douglasville, Georgia. We offer a wide range of fitness services to help you achieve your health goals. Our experienced trainer will work with you to develop a personalized workout plan tailored to your needs and fitness level. Whether you&apos;re looking to lose weight, build muscle, or improve your overall health and wellness, we have a program for you.
+            </p>
+            <p className={styles.aboutText}>
+              Our services include one-on-one personal training, group fitness classes, and athlete training. With Body&apos;s By Bert, you&apos;ll get the support you need to transform your body and improve your quality of life. We look forward to earning your business.
+            </p>
+          </div>
         </div>
       </div>
     </section>

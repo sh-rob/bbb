@@ -1,6 +1,7 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
+import styles from './Contact.module.css'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -63,49 +64,49 @@ export default function Contact() {
   }
 
   return (
-    <section className="contact" id="contact">
+    <section className={styles.contact} id="contact">
       <div className="container">
         <div className="section-header">
           <span className="section-label">GET IN TOUCH</span>
           <h2 className="section-title">Contact Us</h2>
         </div>
 
-        <div className="contact-wrapper">
-          <div className="contact-info">
-            <p className="contact-intro">
-              Ready to transform your body and unlock your potential?
+        <div className={styles.contactWrapper}>
+          <div>
+            <p className={styles.contactIntro}>
+              Ready to transform your body and unlock your potential at Douglasville&apos;s premier fitness facility?
               Get in touch with us today and let&apos;s discuss your fitness goals.
             </p>
 
-            <div className="contact-details">
-              <div className="contact-detail-item">
-                <div className="contact-icon">📍</div>
+            <div className={styles.contactDetails}>
+              <div className={styles.contactDetailItem}>
+                <div className={styles.contactIcon}>📍</div>
                 <div>
-                  <h4>Location</h4>
-                  <p>1234 Empire Boulevard<br />Suite 100<br />Your City, ST 12345</p>
+                  <h3>Location</h3>
+                  <p>8105 Odessa Pl Unit B<br />Douglasville, GA 30134</p>
                 </div>
               </div>
 
-              <div className="contact-detail-item">
-                <div className="contact-icon">📞</div>
+              <div className={styles.contactDetailItem}>
+                <div className={styles.contactIcon}>📞</div>
                 <div>
-                  <h4>Phone</h4>
-                  <p>(555) 123-4567</p>
+                  <h3>Phone</h3>
+                  <p>(470) 535-7638</p>
                 </div>
               </div>
 
-              <div className="contact-detail-item">
-                <div className="contact-icon">✉️</div>
+              <div className={styles.contactDetailItem}>
+                <div className={styles.contactIcon}>✉️</div>
                 <div>
-                  <h4>Email</h4>
+                  <h3>Email</h3>
                   <p>info@bodysbybertfitness.com</p>
                 </div>
               </div>
 
-              <div className="contact-detail-item">
-                <div className="contact-icon">⏰</div>
+              <div className={styles.contactDetailItem}>
+                <div className={styles.contactIcon}>⏰</div>
                 <div>
-                  <h4>Hours</h4>
+                  <h3>Hours</h3>
                   <p>Mon-Fri: 5:00 AM - 10:00 PM<br />
                   Sat: 6:00 AM - 8:00 PM<br />
                   Sun: 7:00 AM - 6:00 PM</p>
@@ -114,9 +115,9 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="contact-form-container">
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group">
+          <div className={styles.contactFormContainer}>
+            <form className={styles.contactForm} onSubmit={handleSubmit}>
+              <div className={styles.formGroup}>
                 <label htmlFor="name">Full Name *</label>
                 <input
                   type="text"
@@ -129,7 +130,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="form-group">
+              <div className={styles.formGroup}>
                 <label htmlFor="email">Email Address *</label>
                 <input
                   type="email"
@@ -142,7 +143,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="form-group">
+              <div className={styles.formGroup}>
                 <label htmlFor="phone">Phone Number</label>
                 <input
                   type="tel"
@@ -154,7 +155,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="form-group">
+              <div className={styles.formGroup}>
                 <label htmlFor="message">Message *</label>
                 <textarea
                   id="message"
@@ -167,7 +168,7 @@ export default function Contact() {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn-submit" disabled={isSubmitting}>
+              <button type="submit" className={styles.btnSubmit} disabled={isSubmitting}>
                 {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
               </button>
             </form>

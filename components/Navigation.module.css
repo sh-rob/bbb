@@ -6,15 +6,17 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
+    background-color: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     z-index: 1000;
     padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--color-red);
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .scrolled {
-    box-shadow: 0 2px 20px rgba(220, 0, 0, 0.3);
+    box-shadow: var(--shadow-md);
+    border-bottom-color: var(--color-border-default);
 }
 
 .navContainer {
@@ -34,19 +36,19 @@
 
 .logoText {
     font-family: var(--font-primary);
-    font-size: 1.5rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: var(--color-white);
-    text-shadow: 0 0 10px rgba(220, 0, 0, 0.5);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-black);
+    letter-spacing: 0.05em;
+    color: var(--color-text-primary);
 }
 
 .logoSubtitle {
-    font-family: var(--font-primary);
-    font-size: 0.7rem;
-    letter-spacing: 4px;
-    color: var(--color-red);
-    font-weight: 400;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.15em;
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
 }
 
 .navMenu {
@@ -56,12 +58,17 @@
 }
 
 .navMenu li a {
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: var(--color-white);
+    color: var(--color-text-secondary);
     position: relative;
+    transition: color var(--transition-base);
+}
+
+.navMenu li a:hover {
+    color: var(--color-text-primary);
 }
 
 .navMenu li a::after {
@@ -71,8 +78,9 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-red);
-    transition: var(--transition);
+    background-color: var(--color-primary);
+    transition: width var(--transition-base);
+    border-radius: var(--radius-full);
 }
 
 .navMenu li a:hover::after {
@@ -81,21 +89,25 @@
 
 .btnBook {
     display: inline-block;
-    background: linear-gradient(135deg, var(--color-blue-dark) 0%, var(--color-blue-lightsaber) 100%);
-    color: var(--color-white);
+    background: var(--color-primary);
+    color: var(--color-text-primary);
     padding: var(--spacing-sm) var(--spacing-lg);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    border: 2px solid var(--color-blue-lightsaber);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: var(--radius-md);
     text-transform: uppercase;
     text-decoration: none;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
 }
 
 .btnBook:hover {
-    background-color: transparent;
+    background: var(--color-primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+    box-shadow: var(--shadow-md);
 }
 
 .mobileCtaButton {
@@ -112,8 +124,9 @@
 .hamburger span {
     width: 25px;
     height: 3px;
-    background-color: var(--color-red);
-    transition: var(--transition);
+    background-color: var(--color-text-primary);
+    transition: all var(--transition-base);
+    border-radius: var(--radius-full);
 }
 
 .active.hamburger span:nth-child(1) {
@@ -138,11 +151,12 @@
         top: 70px;
         left: -100%;
         flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.98);
+        background-color: rgba(15, 15, 15, 0.98);
+        backdrop-filter: blur(16px);
         width: 100%;
         padding: var(--spacing-lg) 0;
-        transition: left 0.3s ease;
-        border-bottom: 1px solid var(--color-red);
+        transition: left var(--transition-slow);
+        border-bottom: 1px solid var(--color-border-default);
     }
 
     .navMenu.active {

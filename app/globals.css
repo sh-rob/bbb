@@ -3,27 +3,52 @@
    Component-specific styles are in their respective .module.css files
    ============================================ */
 
-/* CSS VARIABLES */
+/* CSS VARIABLES - Premium Design System */
 :root {
-    /* Colors */
-    --color-white: #ffffff;
-    --color-off-white: #e0e0e0;
-    --color-black: #000000;
-    --color-dark-gray: #0a0a0a;
-    --color-medium-gray: #1a1a1a;
-    --color-light-gray: #2a2a2a;
-    --color-red: #dc0000;
-    --color-red-dark: #a00000;
-    --color-red-bright: #ff0000;
-    --color-blue-lightsaber: #00d4ff;
-    --color-blue-dark: #0085b8;
-    --color-blue-glow: #4dd0ff;
-    --color-orange: #FF9500;
-    --color-coral: #FF9500;
-    --color-gold: #FF9500;
-    --color-dark-red: #8b0000;
+    /* ============================================
+       COLOR PALETTE - Modern Athletic Premium
+       ============================================ */
 
-    /* Spacing Scale - Consistent units throughout */
+    /* Backgrounds - Deep, rich neutrals */
+    --color-bg-primary: #0F0F0F;        /* Deep charcoal base */
+    --color-bg-secondary: #1A1A1A;      /* Elevated surface */
+    --color-bg-tertiary: #242424;       /* Card/component background */
+    --color-bg-elevated: #2A2A2A;       /* Hover/active states */
+
+    /* Text Colors - High contrast, accessible */
+    --color-text-primary: #FFFFFF;      /* Pure white for headings */
+    --color-text-secondary: #E5E5E5;    /* Soft white for body */
+    --color-text-muted: #A0A0A0;        /* Muted text */
+    --color-text-disabled: #666666;     /* Disabled state */
+
+    /* Primary Accent - Energetic Orange (Athletic, Premium) */
+    --color-primary: #FF6B35;           /* Vibrant coral-orange */
+    --color-primary-dark: #E85A28;      /* Darker for hover */
+    --color-primary-light: #FF8355;     /* Lighter for subtle effects */
+    --color-primary-glow: rgba(255, 107, 53, 0.15); /* Subtle glow */
+
+    /* Secondary Accent - Deep Blue (Trust, Performance) */
+    --color-secondary: #0EA5E9;         /* Sky blue */
+    --color-secondary-dark: #0284C7;    /* Darker blue */
+    --color-secondary-light: #38BDF8;   /* Lighter blue */
+
+    /* Borders & Dividers */
+    --color-border-subtle: #2A2A2A;     /* Subtle divider */
+    --color-border-default: #3A3A3A;    /* Default border */
+    --color-border-emphasis: #4A4A4A;   /* Emphasized border */
+
+    /* Status Colors */
+    --color-success: #10B981;           /* Green for success */
+    --color-error: #EF4444;             /* Red for errors */
+    --color-warning: #F59E0B;           /* Amber for warnings */
+
+    /* Focus Ring */
+    --color-focus: var(--color-primary);
+    --focus-ring: 0 0 0 3px var(--color-primary-glow);
+
+    /* ============================================
+       SPACING SCALE - Consistent units
+       ============================================ */
     --spacing-xs: 0.5rem;   /* 8px */
     --spacing-sm: 1rem;     /* 16px */
     --spacing-md: 1.5rem;   /* 24px */
@@ -33,12 +58,59 @@
     --spacing-3xl: 6rem;    /* 96px */
     --spacing-4xl: 8rem;    /* 128px */
 
-    /* Fonts */
-    --font-primary: 'Orbitron', sans-serif;
-    --font-secondary: 'Rajdhani', sans-serif;
+    /* ============================================
+       TYPOGRAPHY SCALE
+       ============================================ */
+    --font-primary: 'Orbitron', sans-serif;     /* Headings - Modern, tech-forward */
+    --font-secondary: 'Rajdhani', sans-serif;   /* Body - Clean, athletic */
 
-    /* Transitions */
-    --transition: all 0.3s ease;
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 2rem;      /* 32px */
+    --font-size-4xl: 2.5rem;    /* 40px */
+    --font-size-5xl: 3rem;      /* 48px */
+
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.7;
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+
+    /* ============================================
+       BORDER RADIUS
+       ============================================ */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* ============================================
+       SHADOWS - Subtle, premium elevation
+       ============================================ */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.7);
+
+    /* Primary glow shadow for CTAs */
+    --shadow-primary: 0 4px 16px rgba(255, 107, 53, 0.3);
+    --shadow-primary-hover: 0 8px 24px rgba(255, 107, 53, 0.4);
+
+    /* ============================================
+       TRANSITIONS
+       ============================================ */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============================================
@@ -57,10 +129,13 @@ html {
 
 body {
     font-family: var(--font-secondary);
-    background-color: var(--color-black);
-    color: var(--color-white);
-    line-height: 1.6;
+    font-size: var(--font-size-base);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Add bottom padding for mobile CTA button */
@@ -73,7 +148,20 @@ body {
 a {
     color: inherit;
     text-decoration: none;
-    transition: var(--transition);
+    transition: var(--transition-base);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
 }
 
 ul {
@@ -103,24 +191,21 @@ img {
 .section-label {
     display: inline-block;
     font-family: var(--font-primary);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: var(--color-red);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.15em;
+    color: var(--color-primary);
     text-transform: uppercase;
     margin-bottom: var(--spacing-sm);
 }
 
 .section-title {
     font-family: var(--font-primary);
-    font-size: 3rem;
-    font-weight: 900;
-    letter-spacing: 3px;
-    background: linear-gradient(180deg, #ffffff 0%, #c0c0c0 50%, #888888 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.15));
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-black);
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+    line-height: var(--line-height-tight);
 }
 
 /* ============================================
@@ -137,7 +222,7 @@ img {
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: var(--font-size-4xl);
     }
 }
 
@@ -151,12 +236,12 @@ img {
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: var(--font-size-3xl);
     }
 }
 
 @media (max-width: 375px) {
     .section-title {
-        font-size: 1.8rem;
+        font-size: var(--font-size-2xl);
     }
 }

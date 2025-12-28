@@ -4,7 +4,7 @@
 
 .services {
     padding: var(--spacing-4xl) 0;
-    background: linear-gradient(135deg, #1a0000 0%, #0a0a0a 50%, #001a1a 100%);
+    background: var(--color-bg-secondary);
 }
 
 .servicesGrid {
@@ -14,37 +14,47 @@
 }
 
 .serviceCard {
-    background: linear-gradient(135deg, #1a1a1a 0%, #1a0f0f 100%);
-    padding: var(--spacing-xl) var(--spacing-lg);
+    background: var(--color-bg-tertiary);
+    padding: var(--spacing-2xl) var(--spacing-xl);
     text-align: center;
-    border: 2px solid transparent;
-    border-image: linear-gradient(135deg, rgba(255, 149, 0, 0.3), rgba(220, 0, 0, 0.3), rgba(255, 149, 0, 0.3)) 1;
-    transition: var(--transition);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
     position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(255, 149, 0, 0.15);
+    box-shadow: var(--shadow-sm);
+}
+
+.serviceCard:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    background: var(--color-bg-elevated);
 }
 
 .serviceIcon {
-    font-size: 3rem;
+    font-size: var(--font-size-5xl);
     margin-bottom: var(--spacing-md);
-    color: var(--color-orange);
-    filter: drop-shadow(0 0 8px rgba(255, 149, 0, 0.7));
-    transition: var(--transition);
+    transition: transform var(--transition-base);
+}
+
+.serviceCard:hover .serviceIcon {
+    transform: scale(1.1);
 }
 
 .serviceCard h3 {
     font-family: var(--font-primary);
-    font-size: 1.5rem;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-sm);
-    letter-spacing: 2px;
-    color: var(--color-coral);
+    letter-spacing: 0.02em;
+    color: var(--color-text-primary);
 }
 
 .serviceCard p {
-    color: var(--color-off-white);
-    line-height: 1.6;
-    font-weight: 300;
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-base);
 }
 
 /* ============================================

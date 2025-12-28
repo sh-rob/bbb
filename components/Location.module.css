@@ -4,7 +4,7 @@
 
 .location {
     padding: var(--spacing-4xl) 0;
-    background-color: var(--color-dark-gray);
+    background-color: var(--color-bg-primary);
 }
 
 .locationGrid {
@@ -21,27 +21,27 @@
 .infoBlock h3 {
     font-family: var(--font-primary);
     font-size: 1.2rem;
-    color: var(--color-red);
+    color: var(--color-primary);
     margin-bottom: var(--spacing-sm);
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 .infoBlock p {
-    color: var(--color-off-white);
+    color: var(--color-text-secondary);
     line-height: 1.8;
     font-weight: 300;
 }
 
 .infoBlock a {
-    color: var(--color-red);
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 600;
-    transition: var(--transition);
+    transition: var(--transition-base);
 }
 
 .infoBlock a:hover {
-    color: var(--color-red-bright);
+    color: var(--color-primary-light);
 }
 
 .hours {
@@ -54,19 +54,23 @@
     display: flex;
     justify-content: space-between;
     padding: var(--spacing-sm);
-    background-color: var(--color-medium-gray);
-    border-left: 3px solid var(--color-red);
+    background-color: var(--color-bg-tertiary);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-sm);
 }
 
 .hourRow span:first-child {
     font-weight: 600;
+    color: var(--color-text-primary);
 }
 
 .locationMap {
     height: 100%;
     min-height: 500px;
     position: relative;
-    border: 2px solid var(--color-red);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
 }
 

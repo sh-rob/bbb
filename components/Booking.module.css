@@ -77,3 +77,19 @@
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
 }
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+    .booking {
+        padding: var(--spacing-3xl) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .booking {
+        padding: var(--spacing-2xl) 0;
+    }
+}

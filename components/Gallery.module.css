@@ -52,12 +52,20 @@
    ============================================ */
 
 @media (max-width: 768px) {
+    .gallery {
+        padding: var(--spacing-3xl) 0;
+    }
+
     .galleryGrid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
+    .gallery {
+        padding: var(--spacing-2xl) 0;
+    }
+
     .galleryGrid {
         grid-template-columns: 1fr;
     }

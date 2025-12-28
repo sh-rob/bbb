@@ -138,6 +138,10 @@
    ============================================ */
 
 @media (max-width: 768px) {
+    .contact {
+        padding: var(--spacing-3xl) 0;
+    }
+
     .contactWrapper {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
@@ -145,6 +149,10 @@
 }
 
 @media (max-width: 480px) {
+    .contact {
+        padding: var(--spacing-2xl) 0;
+    }
+
     .contactFormContainer {
         padding: var(--spacing-lg);
     }

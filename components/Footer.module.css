@@ -4,7 +4,7 @@
 
 .footer {
     background: linear-gradient(180deg, #0a0a0a 0%, #1a0a00 100%);
-    padding: var(--spacing-2xl) 0 var(--spacing-lg);
+    padding: var(--spacing-4xl) 0;
     border-top: 3px solid transparent;
     border-image: linear-gradient(90deg, var(--color-red), var(--color-orange), var(--color-red)) 1;
 }
@@ -13,7 +13,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
 }
 
 .footerCol h4 {
@@ -130,12 +130,20 @@
    ============================================ */
 
 @media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-3xl) 0;
+    }
+
     .footerGrid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
+    .footer {
+        padding: var(--spacing-2xl) 0;
+    }
+
     .footerGrid {
         grid-template-columns: 1fr;
     }

@@ -83,7 +83,17 @@
    ============================================ */
 
 @media (max-width: 768px) {
+    .location {
+        padding: var(--spacing-3xl) 0;
+    }
+
     .locationGrid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .location {
+        padding: var(--spacing-2xl) 0;
     }
 }

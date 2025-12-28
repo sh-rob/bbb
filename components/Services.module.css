@@ -5,6 +5,8 @@
 .services {
     padding: var(--spacing-4xl) 0;
     background: var(--color-bg-secondary);
+    position: relative;
+    z-index: 10;
 }
 
 .servicesGrid {

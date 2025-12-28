@@ -6,6 +6,8 @@
     background: var(--color-bg-primary);
     padding: var(--spacing-4xl) 0;
     border-top: 1px solid var(--color-border-default);
+    position: relative;
+    z-index: 10;
 }
 
 .footerGrid {

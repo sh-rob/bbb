@@ -181,6 +181,8 @@ img {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
+    position: relative;
+    z-index: 10;
 }
 
 .section-header {

@@ -4,7 +4,7 @@
 
 .services {
     padding: var(--spacing-4xl) 0;
-    background: var(--color-bg-secondary);
+    background: transparent;
     position: relative;
     z-index: 10;
 }

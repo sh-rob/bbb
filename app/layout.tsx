@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://bodysbybertfitness.com',
+    url: 'https://bodysbybert.com',
     siteName: 'Body\'s By Bert Performance & Fitness',
     title: 'Personal Training Douglasville GA | Body\'s By Bert',
     description: 'Top-rated personal training in Douglasville, GA. Expert one-on-one training, group fitness classes, and athlete training.',
@@ -91,7 +91,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${orbitron.variable} ${rajdhani.variable}`}>
       <head>
-        <link rel="canonical" href="https://bodysbybertfitness.com" />
+        <link rel="canonical" href="https://bodysbybert.com" />
         <meta name="geo.region" content="US-GA" />
         <meta name="geo.placename" content="Douglasville" />
         <meta name="geo.position" content="33.758431;-84.742413" />
@@ -102,11 +102,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'LocalBusiness',
-              '@id': 'https://bodysbybertfitness.com',
+              '@id': 'https://bodysbybert.com',
               name: "Body's By Bert Performance & Fitness",
-              image: 'https://bodysbybertfitness.com/og-image.jpg',
+              image: 'https://bodysbybert.com/og-image.jpg',
               description: 'Top-tier personal training and fitness services in Douglasville, Georgia. One-on-one training, group classes, and athlete training.',
-              url: 'https://bodysbybertfitness.com',
+              url: 'https://bodysbybert.com',
               telephone: '(470) 535-7638',
               email: 'info@bodysbybertfitness.com',
               priceRange: '$$',

@@ -21,6 +21,10 @@ export default function SpaceAnimation() {
     resize()
     window.addEventListener('resize', resize)
 
+    // Store canvas dimensions for particle class
+    const getCanvasWidth = () => canvas.width
+    const getCanvasHeight = () => canvas.height
+
     // Particle class
     class Particle {
       x: number
@@ -32,8 +36,8 @@ export default function SpaceAnimation() {
       color: string
 
       constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+        this.x = Math.random() * getCanvasWidth()
+        this.y = Math.random() * getCanvasHeight()
         this.size = Math.random() * 2 + 0.5
         this.speedX = Math.random() * 0.5 - 0.25
         this.speedY = Math.random() * 0.5 - 0.25
@@ -55,10 +59,10 @@ export default function SpaceAnimation() {
         this.y += this.speedY
 
         // Wrap around edges
-        if (this.x > canvas.width) this.x = 0
-        if (this.x < 0) this.x = canvas.width
-        if (this.y > canvas.height) this.y = 0
-        if (this.y < 0) this.y = canvas.height
+        if (this.x > getCanvasWidth()) this.x = 0
+        if (this.x < 0) this.x = getCanvasWidth()
+        if (this.y > getCanvasHeight()) this.y = 0
+        if (this.y < 0) this.y = getCanvasHeight()
       }
 
       draw() {
